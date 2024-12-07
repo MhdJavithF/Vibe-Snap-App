@@ -1,0 +1,112 @@
+.profile-wrapper {
+    overflow: auto;
+    scrollbar-width: none;
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
+    
+    .banner {
+        width: 373px;
+        height: 189px;
+        border-radius: 20px;
+        position: relative;
+
+        .back {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 25px;
+            left: 16px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #dp {
+            img{
+                position: absolute;
+                top: 102px;
+                left: 16px;
+            }
+        }
+
+        .edit {
+            position: absolute;
+            width: 208px;
+            height: 32px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: karla;
+            top: 178px;
+            left: 136px;
+            border: 1px solid rgba(0, 0, 0, 0.34);
+            border-radius: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+
+    .bio {
+        margin: 16px;
+
+        #user-name {
+            margin-top: 40px;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 28.06px;
+            width: 187px;
+            height: 28px;
+            top: 234px;
+            left: 15px;
+            color: rgb(0, 0, 0, 1);
+        }
+
+        #about {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17.36px;
+            color: rgba(0, 0, 0, 1);
+            left: 17px;
+            top: 272px;
+        }
+    }
+
+    .post-wrapper {
+        margin: 16px;
+        
+        p{
+            margin-bottom: 16px;
+            width: 76px;
+            height: 21px;
+            top: 330px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21.04px;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .posts {
+            width: 330px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+            .post {
+                width: 158px;
+                height: 220px;
+                overflow: hidden;
+                border-radius: 12px;
+                box-sizing: border-box;
+                
+            }
+        }
+    }
+
+    .add {
+        width: 50px;
+        height: 50px;
+        top: 790px;
+        left: 400px;
+        position: fixed;
+    }
+}

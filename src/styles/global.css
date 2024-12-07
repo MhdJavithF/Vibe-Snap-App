@@ -1,7 +1,9 @@
-:root{
+@import "@fontsource/karla";
+*,:root{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: karla;
 }
 
 .App-wrappers {
@@ -16,5 +18,4 @@
     width: 360px;
     height: 800px;
     border: 1px solid black;
-    overflow: hidden;
 }

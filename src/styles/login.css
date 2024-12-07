@@ -1,7 +1,9 @@
 .login-wrap {
     background: rgba(255, 255, 255, 1);
     position: relative;
+    overflow: hidden;
 }
+
 .bg-cover {
     width: 392px;
     height: 756px;
@@ -31,5 +33,6 @@
         width: 232.59px;
         height: 50px;
         border-radius: 26px;
+        cursor: pointer;
     }
 }
