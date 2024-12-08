@@ -13,6 +13,16 @@
         color: white;
         cursor: pointer;
         z-index: 1000;
+        
+        span {
+            width: 111px;
+            height: 23px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 23.38px;
+            margin-left: 16px;
+            vertical-align:bottom;
+        }
     }
 
     
@@ -53,6 +63,12 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 1);
+            cursor: pointer;
+        }
+
+        .edit:hover{
+            background-color: black;
+            color: white;
         }
         
     }
@@ -183,25 +199,88 @@
         }
     }
 
-    .add {
-        width: 50px;
-        height: 50px;
-        background-color: rgba(0, 0, 0, 1);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        bottom: 30px;
-        left: 294px;
-        position: absolute;   /* fixed is not working */
-        z-index: 1000;
-        
-        svg {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            color: rgba(255, 255, 255, 1);
-            background-color: black;
+}
+
+
+.edit-wrap {
+    margin: 16px;
+
+    .new-name {
+        width: 328px;
+        height: 47.5px;
+        top: 222px;
+     }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17.36px;
+    }
+
+    input {
+        width: 328px;
+        font-size: 14px;
+        line-height: 17.36px;
+        font-weight: 600;
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-bottom: 0.4px solid rgba(0, 0, 0, 1);            
+    }
+
+    .my-bio {
+        p {
+            padding: 15px 0 0 0;
+        }
+        textarea {
+            width: 328px;
+            font-size: 14px;
+            line-height: 17.36px;
+            font-weight: 600;
+            padding: 5px;
+            border: none;
+            outline: none;
+            border-bottom: 0.4px solid rgba(0, 0, 0, 1); 
         }
     }
+
+    .save{
+        width: 328px;
+        height: 48px;
+        position: absolute;
+        top: 710px;
+        padding: 5px 16px;
+        background-color: black;
+        color: rgba(255, 255, 255, 1);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18.7px;
+        border-radius: 36px;
+        cursor: pointer;
+    }    
+}
+
+.banner .edit-icon {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 130px;
+    left: 317px;
+    background-color: rgba(244, 244, 244, 1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    svg {
+        opacity: 60%;
+    }
+
+}
+
+.dp.edit-icon {
+    width: 33px;
+    height: 33px;
+    top: 168px;
+    left: 100px;
 }

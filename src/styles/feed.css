@@ -1,0 +1,164 @@
+.feed-wrapper {
+    overflow: scroll;
+    scrollbar-width: none;
+
+    .head {
+        margin: 16px;
+        width: 328px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .account img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .welc {
+            width: 115px;
+            height: 34px;
+
+            p {
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12.4px;
+            }
+
+            #user-name {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 19.84px;
+            }
+        }
+    }
+}
+
+.feeds-wrap {
+    margin: 16px;
+
+    .title {
+        width: 68px;
+        height: 28px;
+        top: 97px;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 28.06px;
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .feed-rec {
+        margin-top: 20px;
+        width: 328px;
+        height: 335px;
+        border-radius: 26px;
+        background-color: rgba(247, 235, 255, 1);
+        padding: 10px;
+
+        .feed-head {
+            display: flex;
+            gap: 5px;
+
+            .account img {
+                height: 40px;
+                width: 40px;
+            }
+
+            #user-name {
+                width: 43px;
+                height: 19px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 18.7px;
+                color: rgba(0, 0, 0, 1);
+            }
+
+            #time {
+                width: 55px;
+                height: 12px;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12.4px;
+                color: rgba(0, 0, 0, 1);
+            }
+
+        }
+
+        .content p {
+            width: 304px;
+            height: 45px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.88px;
+            color: rgba(0, 0, 0, 1);
+
+            span {
+                color: blue;
+            }
+        }
+
+        .post {
+            margin: 10px 0;
+            display: flex;
+            height: 168px;
+            gap: 5px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content:space-between;
+
+            .like {
+                width: 38px;
+                height: 20px;
+                top: 304px;
+                left: 12px;
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                cursor: pointer;
+
+                svg {
+                    width: 16.05px;
+                    height: 16.05px;
+                    color: rgba(217, 91, 127, 1);
+                }
+
+                span {
+                    width: 14px;
+                    height: 15px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 14.88px;
+                    color: rgba(217, 91, 127, 1);
+                }
+            }
+
+            .share {
+                width: 92px;
+                height: 30px;
+                border-radius: 30px;
+                background-color: rgba(0, 0, 0, 0.07);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+                cursor: pointer;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                p {
+                    width: 39px;
+                    height: 16px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 16.37px;
+                }
+            }
+        }
+    }
+
+}

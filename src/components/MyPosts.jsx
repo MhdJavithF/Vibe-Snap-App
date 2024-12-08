@@ -15,8 +15,8 @@ const MyPosts = () => {
                         <p>Design meet</p>
                     </div>
                     <div className="like liked">
-                            <HiHeart/>
-                            <span>510</span>
+                        <HiHeart/>
+                        <span>510</span>
                     </div>
                 </div>
                 <div className="post">
