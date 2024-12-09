@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom"
 import bannerImg from "../assets/images/profile/banner.png"
 import dpImg from "../assets/images/profile/dp.png"
+
 
 const ProfileBio = () => {
   return (
@@ -8,9 +10,11 @@ const ProfileBio = () => {
             <img src={bannerImg} alt="banner"/>
             <div id="dp">
             <img src={dpImg} alt="DP"/>
-            <span className="edit">
-                Edit profile
-            </span>
+            <Link to={`/edit-page`}>
+                <span className="edit">
+                    Edit profile
+                </span>
+            </Link>
         </div>
         </div>
         <div className="bio">

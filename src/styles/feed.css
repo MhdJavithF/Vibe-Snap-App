@@ -13,6 +13,7 @@
         .account img {
             height: 50px;
             width: 50px;
+            cursor: pointer;
         }
 
         .welc {
@@ -32,6 +33,25 @@
             }
         }
     }
+}
+
+.head .logout {
+    width: 60px;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.541);
+    border-radius: 36px;
+    padding: 4px;
+    color: rgba(0, 0, 0, 0.822);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 1);
+    margin-left: 70px; /* Pushes the logout button to the right end */
+}
+
+.logout:hover {
+    background-color: black;
+    color: white;
 }
 
 .feeds-wrap {
@@ -62,6 +82,7 @@
             .account img {
                 height: 40px;
                 width: 40px;
+                cursor: pointer;
             }
 
             #user-name {
@@ -107,6 +128,7 @@
         .actions {
             display: flex;
             justify-content:space-between;
+            align-items: center;
 
             .like {
                 width: 38px;

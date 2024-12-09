@@ -13,6 +13,10 @@
         color: white;
         cursor: pointer;
         z-index: 1000;
+
+        svg {
+            color: white;
+        }
         
         span {
             width: 111px;
@@ -22,6 +26,7 @@
             line-height: 23.38px;
             margin-left: 16px;
             vertical-align:bottom;
+            cursor: default;
         }
     }
 
@@ -34,6 +39,7 @@
             position: relative;
             border-radius: 0 0 20px 20px;
             top: -27px;
+            cursor: pointer;
         }
         
 
@@ -45,6 +51,7 @@
                 top: 102px;
                 left: 16px;
                 border-radius: 50%;
+                cursor: pointer;
             }
         }
 
@@ -55,6 +62,7 @@
             font-size: 12px;
             font-weight: 700;
             font-family: karla;
+            color: rgb(0, 0, 0, 1);
             top: 180px;
             left: 136px;
             border: 1px solid rgba(0, 0, 0, 0.34);
@@ -271,6 +279,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
     svg {
         opacity: 60%;

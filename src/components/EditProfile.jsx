@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bannerImg from "../assets/images/profile/banner.png"
 import dpImg from "../assets/images/profile/dp.png"
 import "../styles/profile.css"
@@ -10,7 +11,7 @@ const EditProfile = () => {
   return (
     <div className='profile-wrapper pages'>
         <a className="back">
-          <FaArrowLeft />
+          <Link to={`/profile-page`}><FaArrowLeft /></Link>
           <span>
             Edit Profile
           </span>
@@ -33,8 +34,10 @@ const EditProfile = () => {
           <div className="my-bio">
             <p>Bio</p>
             <textarea id="about"></textarea>
-          </div> 
-          <button className="save">Save</button>
+          </div>
+          <Link to={`/profile-page`}>
+            <button className="save">Save</button>
+          </Link>
         </div>
     </div>
   )

@@ -2,6 +2,7 @@ import bgImg from "../assets/images/login/bg.png"
 import googleImg from "../assets/images/login/google.png"
 import vibeImg from "../assets/images/login/vibe.png"
 import "../styles/login.css";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
@@ -13,9 +14,11 @@ const LoginPage = () => {
         <div className="vibe">
           <img src={vibeImg} alt="background"/>
         </div>
-        <div className="google">
-          <img src={googleImg} alt="background"/>
-        </div>
+        <Link to={`/feed`}>
+          <div className="google">
+            <img src={googleImg} alt="background"/>
+          </div>
+        </Link>
       </div>
     </div>
   )
