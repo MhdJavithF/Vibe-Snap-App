@@ -7,8 +7,37 @@ import { BiSolidNavigation } from "react-icons/bi";
 import { HiHeart } from "react-icons/hi";
 import "../styles/feed.css"
 import { Link } from "react-router-dom"
+import { signOut } from "firebase/auth"
+import { auth } from "../services/firebase"
+import { useNavigate } from "react-router-dom"
+import "../styles/popup.css"
+import { useState } from "react"
 
 const FeedPage = () => {
+
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        signOut(auth)
+          .then(() => {
+            // alert("Successfully logged out!");
+            navigate('/');
+          })
+          .catch((error) => {
+            console.error("Logout failed", error);
+          });
+    }
+
+    const openConfirmation = () => {
+        setShowConfirmation(true);
+    };
+    
+    const closeConfirmation = () => {
+        setShowConfirmation(false);
+    };
+
+    
   return (
     <div className="feed-wrapper pages">
         <div className="head">
@@ -21,9 +50,18 @@ const FeedPage = () => {
                 <p>Welcome Back,</p>
                 <p id="user-name">Sakshi Agarwal</p>
             </div>
-            <Link to={`/`}>
-                <button className="logout">Logout</button>
-            </Link>
+            {/* <Link to={`/`}> */}
+                <button className="logout" onClick={openConfirmation}>Logout</button>
+                {showConfirmation && (
+                    <div className="popup">
+                        <div className="popup-content">
+                            <p>Do you want to logout?</p>
+                            <button onClick={handleLogout}>Yes</button>
+                            <button onClick={closeConfirmation}>No</button>
+                        </div>
+                    </div>
+                )}
+            {/* </Link> */}
         </div>
 
         <div className="feeds-wrap">

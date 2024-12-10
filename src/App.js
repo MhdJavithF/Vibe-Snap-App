@@ -18,8 +18,9 @@ function App() {
     <div className="App App-wrappers">
       <Routes>
         <Route  path="/" element={<><LoginPage/></>}></Route>
+        <Route  path="/create-page" element={<><EditProfile pageType="create" /></>}></Route>
         <Route  path="/profile-page" element={<><ProfilePage/></>}></Route>
-        <Route  path="/edit-page" element={<><EditProfile /></>}></Route>
+        <Route  path="/edit-page" element={<><EditProfile pageType="edit" /></>}></Route>
         <Route  path="/feed" element={<><FeedPage /></>}></Route>
       </Routes>
     </div>
@@ -28,6 +29,5 @@ function App() {
 }
 
 export default App;
-
 
           

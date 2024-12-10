@@ -7,13 +7,13 @@ import { HiPencil } from "react-icons/hi";
 
 
 
-const EditProfile = () => {
+const EditProfile = ({ pageType }) => {
   return (
     <div className='profile-wrapper pages'>
         <a className="back">
           <Link to={`/profile-page`}><FaArrowLeft /></Link>
           <span>
-            Edit Profile
+            {pageType === "create" ? "Create Profile" : "Edit Profile"}
           </span>
         </a>
         <div className="banner">
