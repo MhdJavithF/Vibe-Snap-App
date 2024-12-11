@@ -1,0 +1,41 @@
+.share-wrapper {
+    width: 328px;
+    height: 379px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 16px;
+    .share-head {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            width: 118px;
+            height: 26px;
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 25.72px;
+            color: rgba(0, 0, 0, 1);
+            ;
+        }
+
+        .close {
+            width: 32px;
+            height: 32px;
+            color: rgba(245, 245, 245, 1);
+            text-align: center;
+            
+        }
+
+    }
+
+    .share-icons {
+        width: 287px;
+        height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+body {
+    background-color: black;
+}
