@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom"
 import bannerImg from "../assets/images/profile/banner.png"
 import dpImg from "../assets/images/profile/dp.png"
-
+import { UserContext } from "../context/UserContext"
+import { useContext } from "react"
 
 const ProfileBio = () => {
+
+    const {userProfile} = useContext(UserContext);
+
   return (
     <div>
         <div className="banner">
@@ -19,10 +23,10 @@ const ProfileBio = () => {
         </div>
         <div className="bio">
             <h3 id="user-name">
-                Sakshi Agarwal
+                {userProfile.name}
             </h3>
             <p id="about">
-            Just someone who loves designing, sketching, and finding beauty in the little things 💕
+                {userProfile.bio}
             </p>
         </div>
     </div>

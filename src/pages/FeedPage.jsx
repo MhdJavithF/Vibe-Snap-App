@@ -11,10 +11,12 @@ import { signOut } from "firebase/auth"
 import { auth } from "../services/firebase"
 import { useNavigate } from "react-router-dom"
 import "../styles/popup.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { UserContext } from "../context/UserContext"
 
 const FeedPage = () => {
 
+    const {userProfile} = useContext(UserContext);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const navigate = useNavigate();
 
@@ -48,7 +50,7 @@ const FeedPage = () => {
             </Link>
             <div className="welc">
                 <p>Welcome Back,</p>
-                <p id="user-name">Sakshi Agarwal</p>
+                <p id="user-name">{userProfile.name}</p>
             </div>
             {/* <Link to={`/`}> */}
                 <button className="logout" onClick={openConfirmation}>Logout</button>
