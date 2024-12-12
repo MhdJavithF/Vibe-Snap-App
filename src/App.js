@@ -18,7 +18,7 @@ function App() {
   return (
     <UserProvider>
         <BrowserRouter>
-          {/* <div className="App App-wrappers">
+          <div className="App App-wrappers">
             <Routes>
               <Route  path="/" element={<><LoginPage/></>}></Route>
               <Route  path="/create-page" element={<><EditProfile pageType="create" /></>}></Route>
@@ -26,8 +26,7 @@ function App() {
               <Route  path="/edit-page" element={<><EditProfile pageType="edit" /></>}></Route>
               <Route  path="/feed" element={<><FeedPage /></>}></Route>
             </Routes>
-          </div> */}
-          <ShareBox />
+          </div>
         </BrowserRouter>
     </UserProvider>
 

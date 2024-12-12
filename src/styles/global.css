@@ -31,7 +31,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 722px;
         bottom: 30px;
         left: 294px;
         position: absolute;   /* fixed is not working properly because of various viewport*/

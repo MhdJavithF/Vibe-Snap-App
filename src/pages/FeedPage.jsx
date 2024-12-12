@@ -13,11 +13,13 @@ import { useNavigate } from "react-router-dom"
 import "../styles/popup.css"
 import { useContext, useState } from "react"
 import { UserContext } from "../context/UserContext"
+import ShareBox from "../components/ShareBox"
 
 const FeedPage = () => {
 
     const {userProfile} = useContext(UserContext);
     const [showConfirmation, setShowConfirmation] = useState(false);
+    const [showShareBox, setShowShareBox] = useState(false);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -39,9 +41,13 @@ const FeedPage = () => {
         setShowConfirmation(false);
     };
 
+    const toggleShareBox = () => {
+        setShowShareBox(!showShareBox);
+    };
+
     
   return (
-    <div className="feed-wrapper pages">
+    <div className={`feed-wrapper pages ${showShareBox ? "active" : ""}`}>
         <div className="head">
             <Link to={`/profile-page`}>
                 <div className="account">
@@ -92,7 +98,7 @@ const FeedPage = () => {
                         <HiHeart/>
                         <span>40</span>
                     </div>
-                    <div className="share">
+                    <div className="share" onClick={toggleShareBox}>
                         <BiSolidNavigation />
                         <p>Share</p>
                     </div>
@@ -223,7 +229,9 @@ const FeedPage = () => {
                 </div>
             </div>
         </div>
+        <div class={`overlay ${showShareBox ? "active" : ""}`}></div>
         <AddPost/>
+        {showShareBox && <ShareBox onClose={toggleShareBox} />}
     </div>
   )
 }

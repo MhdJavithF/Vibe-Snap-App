@@ -4,9 +4,15 @@
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 1);
     padding: 16px;
+    z-index: 1000;
+    border: 1px solid black;
+
     .share-head {
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 1);
+
 
         p {
             width: 118px;
@@ -15,27 +21,93 @@
             font-size: 22px;
             line-height: 25.72px;
             color: rgba(0, 0, 0, 1);
-            ;
         }
 
-        .close {
-            width: 32px;
-            height: 32px;
-            color: rgba(245, 245, 245, 1);
+        .close svg {
+            width: 30px;
+            height: 30px;
+            color: rgba(0, 0, 0, 0.781);
             text-align: center;
-            
+            cursor: pointer;
         }
 
     }
 
     .share-icons {
+        margin-top: 16px;
         width: 287px;
-        height: 250px;
+        height: 210px;
         display: flex;
         flex-wrap: wrap;
-    }
-}
+        justify-content: center;
+        gap: 10px;
+        background-color: rgba(255, 255, 255, 1);
 
-body {
-    background-color: black;
+
+        .icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(233, 246, 251, 1);
+            border-radius: 50%;
+            cursor: pointer;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .name {
+            margin-top: 10px;
+            text-align: center;
+            height: 15px;
+            font-size: 12px;
+            line-height: 14.88px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+
+    .footer {
+        width: 288px;
+        height: 76px;
+
+        p {
+            width: 73px;
+            height: 19px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 18.7px;
+        }
+
+        .copy-pad {
+            position: relative;
+
+            input {
+                margin: 8px;
+                padding: 5px;
+                width: 288px;
+                height: 40px;
+                border-radius: 8px;
+                background-color: rgba(217, 217, 217, 1);
+    
+            }
+    
+        }
+        
+        
+        .copy-pad svg {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 16px;
+            left: 265px;
+            opacity: 50%;
+            z-index: 1000;
+            cursor: pointer;
+        }
+    }
 }
