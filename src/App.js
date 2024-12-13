@@ -1,6 +1,7 @@
 import EditProfile from "./components/EditProfile";
 import ShareBox from "./components/ShareBox";
 import { UserProvider } from "./context/UserContext";
+import CreatePostPage from "./pages/CreatePostPage";
 import FeedPage from "./pages/FeedPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -25,6 +26,7 @@ function App() {
               <Route  path="/profile-page" element={<><ProfilePage/></>}></Route>
               <Route  path="/edit-page" element={<><EditProfile pageType="edit" /></>}></Route>
               <Route  path="/feed" element={<><FeedPage /></>}></Route>
+              <Route path="/new-post" element={<><CreatePostPage /></>}></Route>
             </Routes>
           </div>
         </BrowserRouter>

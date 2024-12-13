@@ -1,12 +1,15 @@
 import { BsPlusLg } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 const AddPost = () => {
   return (
     <div>
+      <Link to={`/new-post`}>
         <div className="add">
-            <BsPlusLg />
+              <BsPlusLg />
         </div>
+      </Link>
     </div>
   )
 }
