@@ -1,11 +1,12 @@
 import { BsPlusLg } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 const AddPost = () => {
+  const location = useLocation();
   return (
     <div>
-      <Link to={`/new-post`}>
+      <Link to={`/new-post`} state={{ from: location.pathname }}>
         <div className="add">
               <BsPlusLg />
         </div>

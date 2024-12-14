@@ -26,7 +26,7 @@ const ShareBox = ({ onClose }) => {
 
       <div className="share-icons">
         <div className="app-name">
-          <div className="icon">
+          <div className="icon twt">
             <TwitterShareButton url={shareUrl} title={shareTitle}>
               <FaTwitter />
             </TwitterShareButton>
@@ -35,7 +35,7 @@ const ShareBox = ({ onClose }) => {
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon fb">
             <FacebookShareButton url={shareUrl} quote={shareTitle}>
               <FaFacebook />
             </FacebookShareButton>
@@ -44,7 +44,7 @@ const ShareBox = ({ onClose }) => {
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon red">
             <RedditShareButton url={shareUrl} title={shareTitle}>
               <FaReddit />
             </RedditShareButton>
@@ -53,7 +53,7 @@ const ShareBox = ({ onClose }) => {
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon tele">
             <TelegramShareButton url={shareUrl} title={shareTitle}>
               <FaTelegram />
             </TelegramShareButton>
@@ -62,7 +62,7 @@ const ShareBox = ({ onClose }) => {
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon wp">
             <WhatsappShareButton url={shareUrl} subject={shareTitle}>
               <FaWhatsapp />
             </WhatsappShareButton>
@@ -70,23 +70,22 @@ const ShareBox = ({ onClose }) => {
           <div className="name">WhatsApp</div>
         </div>
 
-        {/* Placeholder Icons for Non-Supported Platforms */}
         <div className="app-name">
-          <div className="icon">
+          <div className="icon dis">
             <FaDiscord />
           </div>
           <div className="name">Discord</div>
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon insta">
             <FaInstagram />
           </div>
           <div className="name">Instagram</div>
         </div>
 
         <div className="app-name">
-          <div className="icon">
+          <div className="icon msg">
             <FaFacebookMessenger />
           </div>
           <div className="name">Messenger</div>

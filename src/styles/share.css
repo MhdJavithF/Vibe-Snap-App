@@ -31,6 +31,10 @@
             cursor: pointer;
         }
 
+        .close:hover {
+            transform: scale(1.1);
+        }
+
     }
 
     .share-icons {
@@ -58,6 +62,52 @@
                 width: 24px;
                 height: 24px;
             }
+
+        }
+
+        .twt {
+            background-color: #1DA1F2;
+            color: #fff;
+        }
+
+        .fb {
+            background-color: #3b5998;
+            color: #FFFFFF;
+        }
+
+        .wp {
+            background-color: #25D366;
+            color: #FFFFFF;
+        }
+        
+        .insta {
+            background-color: #c92bb7;
+            color: #FFFFFF;
+        }
+
+        .dis {
+            background-color: #0077b5;
+            color: #FFFFFF;
+        }
+
+        .tele {
+            background-color: #0077b5;
+            color: #FFFFFF;
+        }
+
+        .red {
+            background-color: #FF4500;
+            color: #FFFFFF;
+        }
+
+        .msg {
+            background-color: #0077b5;
+            color: #FFFFFF;
+        }
+
+        .icon:hover {
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
         }
 
         .name {
@@ -108,6 +158,10 @@
             opacity: 50%;
             z-index: 1000;
             cursor: pointer;
+        }
+
+        .copy-pad svg:hover {
+            opacity: 100%;
         }
     }
 }

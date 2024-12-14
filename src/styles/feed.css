@@ -18,6 +18,10 @@
             cursor: pointer;
         }
 
+        .account img:hover{
+            transform: scale(1.1);
+        }
+
         .welc {
             width: 115px;
             height: 34px;
@@ -48,13 +52,16 @@
     color: rgba(0, 0, 0, 0.822);
     cursor: pointer;
     background-color: rgba(255, 255, 255, 1);
-    margin-left: 70px; /* Pushes the logout button to the right end */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    margin-left: 70px; /* Pushes the losgout button to the right end */
 }
 
 .logout:hover {
     background-color: black;
+    transform: scale(1.1);
     color: white;
 }
+
 
 .feeds-wrap {
     margin: 16px;
@@ -73,18 +80,22 @@
         margin-top: 20px;
         width: 328px;
         height: 335px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 26px;
         background-color: rgba(247, 235, 255, 1);
         padding: 10px;
+        overflow: hidden;
 
         .feed-head {
             display: flex;
             gap: 5px;
+            align-items: center;
 
             .account img {
                 height: 40px;
                 width: 40px;
                 cursor: pointer;
+                border-radius: 50%;
             }
 
             #user-name {
@@ -97,7 +108,7 @@
             }
 
             #time {
-                width: 55px;
+                width: 65px;
                 height: 12px;
                 font-size: 10px;
                 font-weight: 400;
@@ -114,6 +125,7 @@
             font-weight: 400;
             line-height: 14.88px;
             color: rgba(0, 0, 0, 1);
+            overflow: hidden;
 
             span {
                 color: blue;
@@ -124,13 +136,20 @@
             margin: 10px 0;
             display: flex;
             height: 168px;
+            justify-content: center;
             gap: 5px;
+
+            img {
+                width: 300px;
+                border-radius: 12px;
+            }
         }
 
         .actions {
             display: flex;
             justify-content:space-between;
             align-items: center;
+            
 
             .like {
                 width: 38px;
@@ -139,23 +158,27 @@
                 left: 12px;
                 display: flex;
                 align-items: center;
-                gap: 2px;
+                gap: 5px;
                 cursor: pointer;
 
                 svg {
-                    width: 16.05px;
-                    height: 16.05px;
-                    color: rgba(217, 91, 127, 1);
+                    width: 17px;
+                    height: 17px;
+                    /* color: rgba(217, 91, 127, 1); */
                 }
 
                 span {
-                    width: 14px;
+                    width: 15px;
                     height: 15px;
-                    font-size: 12px;
+                    font-size: 13px;
                     font-weight: 600;
                     line-height: 14.88px;
                     color: rgba(217, 91, 127, 1);
                 }
+            }
+
+            .like svg:hover {
+                transform: scale(1.05);
             }
 
             .share {
@@ -182,7 +205,16 @@
                     line-height: 16.37px;
                 }
             }
+
+            .share:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                transform: scale(0.99);
+            }
         }
+    }
+
+    .feed-rec:hover {
+        transform: scale(1.02);
     }
 }
 
@@ -198,6 +230,7 @@
     .logout{
         filter: opacity(50%);
     }
+   
 
     img {     
         opacity: 0.5;

@@ -29,10 +29,33 @@
         margin-top: 35px;
     }
 
-    .google {
+    .google button {
         width: 232.59px;
         height: 50px;
         border-radius: 26px;
         cursor: pointer;
+        background-color: rgba(41, 41, 41, 1);
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        span {
+            width: 163px;
+            height: 22px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22.4px;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+    .google button:hover {
+        transform: scale(1.1);
     }
 }

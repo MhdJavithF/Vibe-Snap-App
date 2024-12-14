@@ -1,22 +1,31 @@
 import bgImg from "../assets/images/login/bg.png";
-import googleImg from "../assets/images/login/google.png";
 import vibeImg from "../assets/images/login/vibe.png";
+import { FcGoogle } from "react-icons/fc";
 import "../styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../services/firebase.js";
 import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../context/UserContext.jsx";
 
 const LoginPage = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const {userProfile} = useContext(UserContext);
+
 
   const handleLogin = () => {
     signInWithPopup(auth, provider)
       .then((data) => {
         setUser(data.user);
-        navigate('/feed'); // Redirect after successful login
+        
+        const isNewUser = data.additionalUserInfo.isNewUser;
+
+        if (isNewUser) {
+          navigate("/create-page");
+        } else {
+          navigate("/feed");
+        }
       })
       .catch((error) => {
         console.error("Login failed", error);
@@ -26,17 +35,23 @@ const LoginPage = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log("Current user:", user);
         setUser(currentUser);
-        navigate('/feed');
+
+        const profile = localStorage.getItem("userProfile");
+
+        if (userProfile.name) {
+          navigate("/feed");
+        } 
+        else {
+          navigate("/create-page");
+        }
       } else {
         console.log("No user is signed in.");
       }
     });
 
     return () => unsubscribe();
-  }, [navigate,user]);
-
+  }, [navigate]);
 
   return (
     <div className="login-wrap pages">
@@ -48,7 +63,10 @@ const LoginPage = () => {
           <img src={vibeImg} alt="background" />
         </div>
         <div className="google">
-          <img src={googleImg} alt="background" onClick={handleLogin} />
+          <button onClick={handleLogin}>
+            <FcGoogle />
+            <span>Continue with Google</span>
+          </button>
         </div>
       </div>
     </div>

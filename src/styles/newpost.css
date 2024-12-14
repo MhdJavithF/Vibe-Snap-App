@@ -112,6 +112,11 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 18.7px;
+        cursor: pointer;
+    }
+
+    .create:hover {
+        transform: scale(0.99);
     }
 
 }

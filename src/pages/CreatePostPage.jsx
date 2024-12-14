@@ -1,5 +1,5 @@
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoMdPhotos } from "react-icons/io";
 import { BiSolidVideos } from "react-icons/bi";
 import { IoCamera } from "react-icons/io5";
@@ -12,6 +12,9 @@ const CreatePostPage = () => {
   const [cameraStream, setCameraStream] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const location = useLocation();
+
+  const previousPage = location.state?.from || '/feed';
 
   const resizeImage = (file) => {
     const reader = new FileReader();
@@ -46,22 +49,21 @@ const CreatePostPage = () => {
   };
 
   const handleCameraOpen = async () => {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        setCameraStream(stream);
-    };
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    setCameraStream(stream);
+  };
 
-    const stopCamera = () => {
+  const stopCamera = () => {
     if (cameraStream) {
-        cameraStream.getTracks().forEach(track => track.stop());
-        setCameraStream(null);
+      cameraStream.getTracks().forEach(track => track.stop());
+      setCameraStream(null);
     }
-    };
-  
+  };
 
   return (
     <div className='new-post-wrapper pages'>
       <span className="back">
-        <Link to={`/profile-page`}>
+        <Link to={previousPage}>
           <FaArrowLeft />
         </Link>
         <span>New Post</span>
@@ -69,38 +71,37 @@ const CreatePostPage = () => {
 
       <div className="rect">
         {selectedFile ? (
-            <div>
+          <div>
             {selectedFile.startsWith("data:image") ? (
-                <img
+              <img
                 src={selectedFile}
                 alt="Preview"
                 style={{ width: "310px", height: "248px" }} />
             ) : (
-                <video
+              <video
                 src={selectedFile}
                 controls
                 autoPlay
                 style={{ width: "310px", height: "248px" }} />
             )}
             <div className="delete-icon" onClick={() => setSelectedFile(null)}>
-                <MdDelete />
+              <MdDelete />
             </div>
-            </div>
+          </div>
         ) : (
-            !cameraStream && <p>What's on your mind?</p> // Hide <p> when cameraStream is active
+          !cameraStream && <p>What's on your mind?</p>
         )}
         {cameraStream && (
-            <video
+          <video
             ref={(videoElement) => {
-                if (videoElement && cameraStream) {
+              if (videoElement && cameraStream) {
                 videoElement.srcObject = cameraStream;
-                }
+              }
             }}
             autoPlay
             style={{ width: "310px", height: "248px" }} />
         )}
       </div>
-
 
       <div className="options">
         <label className="pic icon">

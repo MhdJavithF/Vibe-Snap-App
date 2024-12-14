@@ -14,32 +14,18 @@ import "../styles/popup.css"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import ShareBox from "../components/ShareBox"
+import Data from '../assets/MOCK_DATA.json'
 
 const FeedPage = () => {
-
     const {userProfile} = useContext(UserContext);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [showShareBox, setShowShareBox] = useState(false);
     const [feedData, setFeedData] = useState([]);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        fetch('/MOCK_DATA.json')
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error(`HTTP error! Status: ${res.status}`);
-                }
-                return res.json();
-            })
-            .then(data => setFeedData(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
     
-
     const handleLogout = () => {
         signOut(auth)
           .then(() => {
-            // alert("Successfully logged out!");
             navigate('/');
           })
           .catch((error) => {
@@ -59,6 +45,9 @@ const FeedPage = () => {
         setShowShareBox(!showShareBox);
     };
 
+    useEffect(() => {
+        console.log(Data);
+    },[Data])
     
   return (
     <div className={`feed-wrapper pages ${showShareBox ? "active" : ""}`}>
@@ -72,18 +61,16 @@ const FeedPage = () => {
                 <p>Welcome Back,</p>
                 <p id="user-name">{userProfile.name}</p>
             </div>
-            {/* <Link to={`/`}> */}
-                <button className="logout" onClick={openConfirmation}>Logout</button>
-                {showConfirmation && (
-                    <div className="popup">
-                        <div className="popup-content">
-                            <p>Do you want to logout?</p>
-                            <button onClick={handleLogout}>Yes</button>
-                            <button onClick={closeConfirmation}>No</button>
-                        </div>
+            <button className="logout" onClick={openConfirmation}>Logout</button>
+            {showConfirmation && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <p>Do you want to logout?</p>
+                        <button onClick={handleLogout}>Yes</button>
+                        <button onClick={closeConfirmation}>No</button>
                     </div>
-                )}
-            {/* </Link> */}
+                </div>
+            )}
         </div>
 
         <div className="feeds-wrap">
