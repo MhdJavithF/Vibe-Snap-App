@@ -18,10 +18,10 @@ const EditProfile = ({ pageType }) => {
     const userName = userNameRef.current.value;
     if (userName.trim() === "") {
       setErrorMessage("Username cannot be empty.");
-      return;
+      return; 
     }
 
-    setErrorMessage("");
+    setErrorMessage(""); 
 
     setUserProfile({
       name: userName,
@@ -81,4 +81,4 @@ const EditProfile = ({ pageType }) => {
   );
 };
 
-export default EditProfile;
+export default EditProfile

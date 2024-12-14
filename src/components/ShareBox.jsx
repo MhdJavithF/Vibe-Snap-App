@@ -103,4 +103,4 @@ const ShareBox = ({ onClose }) => {
   );
 };
 
-export default ShareBox;
+export default ShareBox

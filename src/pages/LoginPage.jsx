@@ -51,7 +51,7 @@ const LoginPage = () => {
     });
 
     return () => unsubscribe();
-  }, [navigate]);
+  }, [navigate, userProfile]);
 
   return (
     <div className="login-wrap pages">
@@ -73,4 +73,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default LoginPage

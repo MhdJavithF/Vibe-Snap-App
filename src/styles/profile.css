@@ -137,6 +137,7 @@
             flex-wrap: wrap;
             gap: 10px;
             background-color: rgba(255, 255, 255, 1);
+            cursor: pointer;
 
             
             .post {
@@ -205,6 +206,10 @@
                         color: red;
                     }
                 }
+            }
+
+            .post:hover {
+                transform: scale(1.02);
             }
         }
     }

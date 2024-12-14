@@ -11,7 +11,7 @@ const LikeButton = ({ initialLikes }) => {
     } else {
       setLikesCount((prevCount) => prevCount + 1); 
     }
-    setIsLiked((prevState) => !prevState); 
+    setIsLiked((prevState) => !prevState);
   };
 
   return (
@@ -22,4 +22,4 @@ const LikeButton = ({ initialLikes }) => {
   );
 };
 
-export default LikeButton;
+export default LikeButton

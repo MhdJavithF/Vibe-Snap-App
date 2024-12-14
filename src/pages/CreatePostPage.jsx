@@ -139,4 +139,4 @@ const CreatePostPage = () => {
   );
 };
 
-export default CreatePostPage;
+export default CreatePostPage
