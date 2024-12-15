@@ -1,9 +1,5 @@
 import AddPost from "../components/AddPost"
 import DpImg from "../assets/images/profile/dp.png"
-import UserDp from "../assets/images/feed/user1.png"
-import PostImg1 from "../assets/images/feed/1post1.png"
-import PostImg2 from "../assets/images/feed/1post2.png"
-import { BiSolidNavigation } from "react-icons/bi";
 import "../styles/feed.css"
 import { Link } from "react-router-dom"
 import { signOut } from "firebase/auth"
@@ -13,8 +9,8 @@ import "../styles/popup.css"
 import { useContext, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import ShareBox from "../components/ShareBox"
-import Data from '../assets/MOCK_DATA.json'
 import LikeButton from "../components/LikeButton"
+import InfiniteScrollComponent from "../components/InfiniteScrollComponent"
 
 const FeedPage = () => {
 
@@ -79,66 +75,9 @@ const FeedPage = () => {
 
         <div className="feeds-wrap">
             <p className="title">Feeds</p>
-
-
-            <div className="feed-rec">
-                <div className="feed-head">
-                    <div className="account">
-                        <img src={UserDp} alt="user"/>
-                    </div>
-                    <div className="user">
-                        <p id="user-name">Aarav</p>
-                        <p id="time">2 hours ago</p>
-                    </div>
-                </div>
-                <div className="content">
-                    <p>
-                    Just arrived in New York City! Excited to explore the sights, sounds, and energy of this amazing place. 🗽 <span>#NYC #Travel</span>
-                    </p>
-                </div>
-                <div className="post">
-                    <img src={PostImg1} alt="post"/>
-                    <img src={PostImg2} alt="post"/>
-                </div>
-                <div className="actions">
-                    <LikeButton initialLikes={40} />
-                    <div className="share" onClick={toggleShareBox}>
-                        <BiSolidNavigation />
-                        <p>Share</p>
-                    </div>
-                </div>
-            </div>
             
+            <InfiniteScrollComponent share={toggleShareBox}/>
 
-            { Data.map((data, index) => (
-                <div className="feed-rec" key={index}>
-                    <div className="feed-head">
-                        <div className="account">
-                            <img src={data.user_dp} alt="user" />
-                        </div>
-                        <div className="user">
-                            <p id="user-name">{data.user_name}</p>
-                            <p id="time">{data.time} hours ago</p>
-                        </div>
-                    </div>
-                    <div className="content">
-                        <p>
-                            {data.content} <span>{data.tags}</span>
-                        </p>
-                    </div>
-                    <div className="post">
-                        <img src={data.post_img} alt="post" />
-                    </div>
-                    <div className="actions">
-                        <LikeButton initialLikes={data.likes} />
-                        <div className="share" onClick={toggleShareBox}>
-                            <BiSolidNavigation />
-                            <p>Share</p>
-                        </div>
-                    </div>
-                </div>
-              )) 
-            }
         </div>
         <div class={`overlay ${showShareBox ? "active" : ""}`}></div>
         <AddPost label='feed'/>

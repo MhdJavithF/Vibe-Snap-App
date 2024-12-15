@@ -1,0 +1,4 @@
+.infinite-wrap {
+    scrollbar-width: none;
+    overflow: hidden;
+}
