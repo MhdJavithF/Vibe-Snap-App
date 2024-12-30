@@ -33,7 +33,7 @@
         align-items: center;
         bottom: 30px;
         left: 294px;
-        position: absolute;   /* fixed is not working properly because of various viewport*/
+        position: fixed;   /* fixed is not working properly because of various viewport*/
         z-index: 1000;
         cursor: pointer;
         
